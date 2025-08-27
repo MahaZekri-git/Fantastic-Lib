@@ -1,0 +1,590 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Site Metas -->
+  <link rel="icon" href="{% static 'images/logo_icon.png' %}" type="image/gif" />
+  <style>
+    #btn{
+      padding: 10px 45px;
+        background-color: #44b89d;
+        border-radius: 45px;
+        color: #ffffff;
+        border: 1px solid #44b89d;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        margin-top: 15px;
+    }
+    #btn:hover{
+      background-color: transparent;
+      color: #44b89d;
+    }
+
+  </style>
+  
+  <title>UIT</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+  <!-- font awesome style -->
+  <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section" style="background-color: #B85540;">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="/books">
+            <span>
+              <img src="{% static 'images/logo_icon.png' %}" style="width: 50px;height: 50px;"/>  Qualam Arabia
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-10">
+              <li class="nav-item active">
+                <a class="nav-link pl-lg-0" href="/books" style="font-weight: 950"><u>Acceuil</u>   <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/books/about"> A propos de nous</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/books/categories">Catégories</a>
+              </li>  
+              
+              <li class="nav-item">
+                <a class="nav-link" href="/books/contact">Contact</a>
+              </li>
+            </ul>
+            {% if request.session.user_id %}
+                       
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="/books/user/logout" class="nav-link ">
+                  <i class="fas fa-user mr-2"></i>Sign out
+                </a>
+              </li>
+            </ul>
+            {% else %}            
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="/books/signin" class="nav-link ">
+                  <i class="fas fa-user mr-2"></i>Sign in
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/books/signup" class="nav-link ">
+                  <i class="fas fa-user-plus mr-2"></i>Sign up
+                </a>
+              </li>
+            </ul>
+            {% endif %}
+          </div>
+        </nav>
+      </div>
+    </header>
+    
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h5>
+                      <img src="{% static 'images/logo_icon.png' %}" style="width: 40px;height: 40px;"/>  Qualam Arabia
+                    </h5>
+                    <h1>
+                      Un monde de connaissances
+                     
+                    </h1>
+                    <p>
+                      Découvrez un monde infini de connaissances, de rêves et d'évasion au sein de notre librairie, où chaque livre est une porte ouverte vers de nouvelles aventures. Bienvenue dans un lieu où les pages tournent et les esprits s'envolent.                    </p>
+                    <a href="/books/signin" style="background-color: #C0A377; border:1px solid #C0A377">
+                      En savoir plus
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{% static 'images/slider-img.png' %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h5>
+                      <img src="{% static 'images/logo_icon.png' %}" style="width: 40px;height: 40px;"/>  Qualam Arabia
+
+                    </h5>
+                    <h1>
+                      Un monde <br>
+                      plein d'aventures
+                    </h1>
+                    <p>
+                      Plongez dans un monde d'histoires captivantes et de connaissances infinies au cœur de notre librairie, où chaque page raconte une nouvelle aventure. Bienvenue chez nous, où la magie de la lecture prend vie.                    </p>
+                    <a href="/books/signin" style="background-color: #C0A377; border:1px solid #C0A377">
+                      En savoir plus
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{% static 'images/slider-img.png' %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h5>
+                      <img src="{% static 'images/logo_icon.png' %}" style="width: 40px;height: 40px;"/>  Qualam Arabia
+
+                    </h5>
+                    <h1>
+                      Pour tous vos <br>
+                      besoin en lecture
+                    </h1>
+                    <p>
+                      Découvrez un monde de possibilités littéraires dans notre librairie. Nous sommes votre destination ultime pour explorer des histoires captivantes et des connaissances infinies. Bienvenue chez nous, où chaque page est une nouvelle aventure.                    </p>
+                    <a href="/books/signin" style="background-color: #C0A377; border:1px solid #C0A377">
+                      En savoir plus
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{% static 'images/slider-img.png' %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel_btn_box">
+          <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            <span class="sr-only"  style="background-color: #B85540;">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next"  style="background-color: #B85540;">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            <span class="sr-only" >Next</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+
+  <!-- catagory section -->
+
+  <section class="catagory_section layout_padding">
+    <div class="catagory_container">
+      <div class="container ">
+        <div class="heading_container heading_center">
+          <h2>
+            Catégories
+          </h2>
+          <p>
+            Bienvenue dans notre librairie numerique, où vous trouverez une vaste sélection de catégories littéraires pour satisfaire tous les lecteurs. Explorez notre collection, allant des classiques intemporels aux derniers best-sellers, en passant par la science-fiction captivante, la romance envoûtante, l'histoire fascinante, et bien plus encore. Que vous soyez un amoureux de la fiction, un passionné de non-fiction, ou un jeune lecteur en quête d'aventures, nous avons la catégorie parfaite pour vous. Plongez dans l'univers de la lecture et découvrez des trésors littéraires dans chaque rayon de notre librairie.          </p>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/cat1.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Littérature
+                </h5>
+                <p>
+                  Notre librairie est l'endroit idéal pour nourrir votre passion pour la littérature. Plongez dans des récits riches en profondeur et en émotion, et laissez-vous envoûter par l'art de la narration.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/cat2.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Science
+                </h5>
+                <p>
+                  Notre librairie offre une multitude d'ouvrages pour nourrir votre esprit et satisfaire votre soif de savoir. Plongez dans le monde fascinant de la science en parcourant nos étagères et en découvrant les dernières avancées et les classiques intemporels de cette discipline passionnante.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/cat3.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Histoire
+                </h5>
+                <p>
+                  Explorez le passé et plongez-vous dans des périodes cruciales de l'humanité, des grandes civilisations aux guerres mondiales, en passant par les figures emblématiques qui ont façonné notre destin.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/cat4.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Biographie
+                </h5>
+                <p>
+                  Explorez les vies fascinantes et les parcours inspirants à travers notre collection de biographies soigneusement sélectionnées. De personnalités historiques aux figures contemporaines qui ont marqué l'histoire, plongez dans le récit captivant des vies de ceux qui ont façonné le monde.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/cat5.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Aventure
+                </h5>
+                <p>
+                  Des jungles luxuriantes aux contrées lointaines, des trésors cachés aux mystères non résolus, l'aventure vous attend à chaque tournant de page. Laissez-vous emporter par l'excitation de l'inconnu, car ici, chaque livre est un voyage vers des horizons inexplorés. Alors, partez à l'aventure avec nous et explorez un monde de lectures passionnantes qui vous transporteront vers des univers extraordinaires.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/cat6.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Fantaisie
+                </h5>
+                <p>
+                  Notre librairie est l'endroit idéal pour les rêveurs, les amateurs de mondes imaginaires et les chercheurs de contes enchanteurs. Que vous souhaitiez vous perdre dans les épopées épiques des maîtres de la fantasy ou découvrir de nouveaux univers envoûtants, notre sélection soigneusement choisie de livres de fantaisie vous emmènera dans des voyages extraordinaires à chaque page tournée. 
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <a  href="/books/signin" ><button id ="btn" style="background-color: #C0A377; border:1px solid #C0A377">En savoir plus</button></a>
+
+       
+      </div>
+    </div>
+  </section>
+
+  <!-- end catagory section -->
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding">
+    <div class="container ">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="{% static 'images/about-img.png' %}" alt="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                A propos de nous
+              </h2>
+            </div>
+            <p>
+Une bibliothèque numérique révolutionnaire dédiée à la célébration et à la préservation de l'art et de la culture de l'écriture arabe. Cette platforme en ligne immersive est un véritable trésor pour les amateurs d'écriture, les chercheurs, les étudiants, et tous ceux qui souhaitent explorer la beauté de la calligraphie arabe et sa signification profonde dans le contexte culturel.            </p>
+            <a href="/books/signin" style="background-color: #C0A377; border:1px solid #C0A377">
+              En savoir plus
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- client section -->
+
+  <section class="client_section layout_padding">
+    <div class="container ">
+      <div class="heading_container heading_center">
+        <h2>
+          Testimonial
+        </h2>
+        <hr>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="client_container ">
+            <div class="detail-box">
+              <p>
+                Votre librairie est un véritable trésor pour tous les amateurs de lecture. J'y trouve toujours des perles rares. C'est mon lieu de prédilection pour m'évader, apprendre et me laisser emporter par de nouvelles histoires. Chaque visite est une expérience enrichissante, et je ne saurais trop la recommander.              </p>
+              <span>
+                <i class="fa fa-quote-left" aria-hidden="true"></i>
+              </span>
+            </div>
+            <div class="client_id">
+              <div class="img-box">
+                <img src="{% static 'images/c3.jpg' %}" alt="">
+              </div>
+              <div class="client_name">
+                <h5>
+                  Safa Mbarki
+                </h5>
+                <h6>
+                  Etudiante
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mx-auto">
+          <div class="client_container ">
+            <div class="detail-box">
+              <p>
+                J'adore cette librairie ! Leur sélection de livres est incroyablement diversifiée, couvrant un large éventail de genres et d'auteurs. Chaque visite est une aventure littéraire, et le personnel est toujours prêt à offrir des recommandations judicieuses. C'est l'endroit parfait pour les amoureux de la lecture. Je ne peux pas m'empêcher de repartir avec un nouveau trésor à chaque fois que je m'y rends.              </p>
+              <span>
+                <i class="fa fa-quote-left" aria-hidden="true"></i>
+              </span>
+            </div>
+            <div class="client_id">
+              <div class="img-box">
+                <img src="{% static 'images/c2.jpg' %}" alt="">
+              </div>
+              <div class="client_name">
+                <h5>
+                  Houda Kchaou
+                </h5>
+                <h6>
+                  Femme d'affaire
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 mx-auto">
+          <div class="client_container ">
+            <div class="detail-box">
+              <p>
+                J'ai toujours adoré les librairies, mais celle-ci est vraiment spéciale. Leur sélection de livres est exceptionnelle, couvrant une variété de genres pour satisfaire tous les goûts. L'ambiance chaleureuse et accueillante de l'endroit crée un environnement propice à la découverte de nouveaux univers littéraires. Cette librairie est devenue mon lieu de prédilection pour explorer le monde des livres, et je la recommande vivement à tous les amateurs de lecture.              </p>
+              <span>
+                <i class="fa fa-quote-left" aria-hidden="true"></i>
+              </span>
+            </div>
+            <div class="client_id">
+              <div class="img-box">
+                <img src="{% static 'images/c1.jpg' %}" alt="">
+              </div>
+              <div class="client_name">
+                <h5>
+                  Youssef Hajji
+                </h5>
+                <h6>
+                  Commerçant
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end client section -->
+
+  
+  <!-- contact section -->
+
+  <section class="contact_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 ">
+          <div class="heading_container ">
+            <h2 class="">
+              Contactez-nous
+            </h2>
+          </div>
+          <form action="#">
+            <div>
+              <input type="text" placeholder="Nom" />
+            </div>
+            <div>
+              <input type="email" placeholder="Email" />
+            </div>
+            <div>
+              <input type="text" placeholder="Numéro téléphone" />
+            </div>
+            <div>
+              <input type="text" class="message-box" placeholder="Message" />
+            </div>
+            <div class="btn-box">
+              <button style="background-color: #C0A377; border:1px solid #C0A377">
+                Envoyer
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="{% static 'images/contact-img.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end contact section -->
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 info-col">
+          <div class="info_detail">
+            <h4>
+              A propos de nous
+            </h4>
+            <p>
+             L'Université Internationale de Tunis (UIT): faculté de Droit, école de commerce, école polytechnique, école de Journalisme et Business School. Enseignement supérieur, formation professionnelle et continue, recherche appliquée et certifications.            </p>
+            
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info-col">
+          <div class="info_contact">
+            <h4>
+              Addresse
+            </h4>
+            <div class="contact_link_box">
+              <a>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Localisation:<br> 48, rue des Minéraux - 2035 Charguia I - Tunis (Tunisie)
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                   +216 71 809 000
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  info@uit.tn
+                </span>
+              </a>
+            </div>
+            <div class="info_social">
+              <a href="https://www.facebook.com/UniversiteInternationaleTunis">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.youtube.com/user/UniversiteTunisUIT">
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.linkedin.com/school/universite-internationale-de-tunis/">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info-col">
+          <div class="info_contact">
+            <h4>
+              Boite à lettre
+            </h4>
+            <form action="#">
+              <input type="email" placeholder="Email" />
+              <button type="submit" style="background-color: #C0A377; border:1px solid #C0A377">
+                Abonnez-vous
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info-col">
+          <div class="map_container">
+            <div class="map">              
+              <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=406&amp;height=273&amp;hl=en&amp;q=Université internationale tunis&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://connectionsgame.org/">Connections Puzzle</a></div><style>.mapouter{position:relative;text-align:right;width:406px;height:273px;}.gmap_canvas {overflow:hidden;background:none!important;width:406px;height:273px;}.gmap_iframe {width:406px!important;height:273px!important;}</style></div>            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> Tous droits réservés par
+        <a href="https://www.ult-tunisie.com/">UIT</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <!-- bootstrap js -->
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <!-- custom js -->
+  <script src="{% static 'js/custom.js' %}"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+  <!-- End Google Map -->
+
+</body>
+
+</html>
