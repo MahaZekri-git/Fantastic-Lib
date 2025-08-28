@@ -1,5 +1,5 @@
 # Fantastic-Lib
-A Library management system built using Django framework. It is designed for managing Authors, Books, Categories and users. 
+A Library management system built using Django framework. It is designed for managing Authors, Books, Categories and Users. 
 The frontend is designed with html (css+js) and the sqLite is used as database.
 
 ### Exemples of views
